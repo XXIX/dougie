@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby
+
+require 'bodega-shopify'
+
+def help
+  %Q(
+  Usage: bodega [COMMAND]
+
+  Commands:
+    bootstrap, bootstrap [FOLDER]   Setup folder with default files
+    sync_theme [ENVIRONMENT]        Push files modified since last sync to Shopify
+    replace_theme [ENVIRONMENT]     Replace theme on Shopify
+    watch [ENVIRONMENT]             Watch for changes and push to Shopify
+    help                            Prints this help document
+    version                         Prints the bodega shopify gem version
+
+  Options:
+    -h, --help                      Prints this help document
+    -v, --version                   Prints the bodega shopify gem version
+
+  See https://github.com/xxix/bodega-shopify-gem for additional documentation.
+  )
+end
+
+def bootstrap folder=nil
+  builder = BodegaShopify::Builder.new
+  builder.setup folder
+end
+
+def replace_theme environment='development'
+  config = BodegaShopify::Configuration.new environment: environment
+  syncer = BodegaShopify::Syncer.new(config: config)
+  syncer.replace!
+end
+
+def sync_theme environment='development'
+  config = BodegaShopify::Configuration.new environment: environment
+  syncer = BodegaShopify::Syncer.new(config: config)
+  syncer.sync!
+end
+
+def watch environment='development'
+  config = BodegaShopify::Configuration.new environment: environment
+  syncer = BodegaShopify::Syncer.new(config: config)
+  syncer.watch
+end
+
+case ARGV[0]
+when '-v', '--version', 'version'
+  puts BodegaShopify::VERSION
+when '-h', '--help', 'help'
+  puts help
+when 'bootstrap'
+  bootstrap ARGV[1]
+when 'replace_theme'
+  replace_theme ARGV[1]
+when 'sync_theme'
+  sync_theme ARGV[1]
+when 'watch'
+  watch ARGV[1]
+else
+  puts "`#{ARGV[0]}` command not found.\n"
+  puts help
+end

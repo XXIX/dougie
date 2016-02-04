@@ -1,0 +1,9 @@
+---
+:production:
+  :api_key: prod-api-key
+  :password: prod-password
+  :store: prod-store
+:development:
+  :api_key: dev-api-key
+  :password: dev-password
+  :store: dev-store

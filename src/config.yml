@@ -1,0 +1,7 @@
+---
+:ignore_files:
+- _/**/*
+- config/settings_data.json
+- README.md
+- _bodega.yml
+- config.yml
