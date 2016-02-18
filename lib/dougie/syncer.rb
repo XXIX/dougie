@@ -1,7 +1,7 @@
 require 'shopify_theme'
 require 'shopify_theme/cli'
 
-module BodegaShopify
+module Dougie
   class Syncer
     attr_accessor :config
 

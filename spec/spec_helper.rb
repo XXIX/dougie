@@ -1,7 +1,7 @@
 require 'bundler/setup'
 Bundler.setup
 
-require 'bodega-shopify'
+require 'dougie'
 
 RSpec.configure do |config|
   config.before do
@@ -9,7 +9,7 @@ RSpec.configure do |config|
   end
 
   config.after do
-    %w(./_bodega.yml ./config.yml).each { |path| clean_file(path) }
+    %w(./_stores.yml ./config.yml).each { |path| clean_file(path) }
   end
 end
 

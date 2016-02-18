@@ -1,3 +1,3 @@
-module BodegaShopify
+module Dougie
   VERSION = "0.0.1"
 end

@@ -1,6 +1,6 @@
 require 'yaml'
 
-module BodegaShopify
+module Dougie
   class Builder
     attr_accessor :folder
 
@@ -20,7 +20,7 @@ module BodegaShopify
     private
 
     def src_directory
-      spec = Gem::Specification.find_by_name("bodega-shopify")
+      spec = Gem::Specification.find_by_name("dougie")
       "#{spec.gem_dir}/src/"
     end
 
@@ -28,7 +28,7 @@ module BodegaShopify
       unless File.exists?(destination)
         contents = File.open("#{src_directory}#{source}").read
         File.open(destination, 'w') { |file| file.write(contents) }
-        BodegaShopify.logger.info "created #{destination}"
+        Dougie.logger.info "created #{destination}"
       end
     end
 
@@ -40,7 +40,7 @@ module BodegaShopify
     end
 
     def setup_config
-      create_src_file('bodega.yml', File.join(folder_path, '_bodega.yml'))
+      create_src_file('stores.yml', File.join(folder_path, '_stores.yml'))
       create_src_file('config.yml', File.join(folder_path, 'config.yml'))
     end
   end

@@ -1,20 +1,20 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'bodega-shopify/version'
+require 'dougie/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "bodega-shopify"
-  spec.version       = BodegaShopify::VERSION
+  spec.name          = "dougie"
+  spec.version       = Dougie::VERSION
   spec.authors       = ["Michael Dijkstra"]
   spec.email         = ["michael@xxix.co"]
   spec.summary       = "A Shopify workflow gem"
-  spec.description   = "Bodega makes it easier for developers and designers to develop themes and deploy stores on Shopify."
-  spec.homepage      = "https://github.com/xxix/bodega-gem"
+  spec.description   = "Dougie makes it easier for developers and designers to develop themes and deploy stores on Shopify."
+  spec.homepage      = "https://github.com/xxix/dougie"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = ['bodega']
+  spec.executables   = ['dougie']
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 

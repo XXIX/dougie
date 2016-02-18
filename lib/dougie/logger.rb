@@ -1,6 +1,6 @@
 require 'logger'
 
-module BodegaShopify
+module Dougie
   class << self
     attr_writer :logger
 

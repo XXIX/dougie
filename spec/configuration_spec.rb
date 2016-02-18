@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe BodegaShopify do
-  let(:configuration) { BodegaShopify::Configuration.new }
+describe Dougie do
+  let(:configuration) { Dougie::Configuration.new }
 
   context 'with config file' do
     before do
-      FileUtils.cp('fixtures/_bodega.yml', './')
+      FileUtils.cp('fixtures/_stores.yml', './')
     end
 
     it 'defaults to development environment' do
@@ -43,7 +43,7 @@ describe BodegaShopify do
     end
 
     context 'for production' do
-      let(:production_configuration) { BodegaShopify::Configuration.new environment: :production }
+      let(:production_configuration) { Dougie::Configuration.new environment: :production }
 
       it 'defaults to development environment' do
         expect(production_configuration.environment).to eq :production

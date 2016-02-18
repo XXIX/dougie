@@ -1,6 +1,6 @@
 require 'yaml'
 
-module BodegaShopify
+module Dougie
   class Configuration
     attr_accessor :shopify_config, :environment, :config
 
@@ -8,7 +8,7 @@ module BodegaShopify
       self.environment = (params[:environment] || DEFAULT_ENVIRONMENT).to_sym
       self.config = File.exists?(CONFIG_FILE) ? YAML.load(File.read(CONFIG_FILE)) || {} : {}
       self.shopify_config = File.exists?(SHOPIFY_CONFIG_FILE) ? YAML.load(File.read(SHOPIFY_CONFIG_FILE)) || {} : {}
-      BodegaShopify.logger.info "Configured #{environment} store #{store}"
+      Dougie.logger.info "Configured #{environment} store #{store}"
       save_shopify_config
     end
 

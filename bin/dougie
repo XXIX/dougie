@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
-require 'bodega-shopify'
+require 'dougie'
 
 def help
   %Q(
-  Usage: bodega [COMMAND]
+  Usage: dougie [COMMAND]
 
   Commands:
     bootstrap, bootstrap [FOLDER]   Setup folder with default files
@@ -12,42 +12,42 @@ def help
     replace_theme [ENVIRONMENT]     Replace theme on Shopify
     watch [ENVIRONMENT]             Watch for changes and push to Shopify
     help                            Prints this help document
-    version                         Prints the bodega shopify gem version
+    version                         Prints the dougie gem version
 
   Options:
     -h, --help                      Prints this help document
-    -v, --version                   Prints the bodega shopify gem version
+    -v, --version                   Prints the dougie gem version
 
-  See https://github.com/xxix/bodega-shopify-gem for additional documentation.
+  See https://github.com/xxix/dougie for additional documentation.
   )
 end
 
 def bootstrap folder=nil
-  builder = BodegaShopify::Builder.new
+  builder = Dougie::Builder.new
   builder.setup folder
 end
 
 def replace_theme environment='development'
-  config = BodegaShopify::Configuration.new environment: environment
-  syncer = BodegaShopify::Syncer.new(config: config)
+  config = Dougie::Configuration.new environment: environment
+  syncer = Dougie::Syncer.new(config: config)
   syncer.replace!
 end
 
 def sync_theme environment='development'
-  config = BodegaShopify::Configuration.new environment: environment
-  syncer = BodegaShopify::Syncer.new(config: config)
+  config = Dougie::Configuration.new environment: environment
+  syncer = Dougie::Syncer.new(config: config)
   syncer.sync!
 end
 
 def watch environment='development'
-  config = BodegaShopify::Configuration.new environment: environment
-  syncer = BodegaShopify::Syncer.new(config: config)
+  config = Dougie::Configuration.new environment: environment
+  syncer = Dougie::Syncer.new(config: config)
   syncer.watch
 end
 
 case ARGV[0]
 when '-v', '--version', 'version'
-  puts BodegaShopify::VERSION
+  puts Dougie::VERSION
 when '-h', '--help', 'help'
   puts help
 when 'bootstrap'
