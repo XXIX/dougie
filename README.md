@@ -8,15 +8,14 @@ Dougie makes it easier for developers and designers to develop themes and deploy
 
 ## Benefits
 
-+ Use your text editor of choice to edit theme files
-+ Automatically keep theme files in sync
-+ Manage multiple shops and themes at once
++ Manage multiple shops and themes
 + Easily switch between multiple themes/stores
++ Only sync updated theme files
 
 ## Features
 
 1. Sync local theme files with live Shopify stores using the [Shopify Theme gem](https://github.com/Shopify/shopify_theme/)
-2. Deploy your theme to development and production stores
+2. Deploy your theme to multiple stores
 
 ## Planned Features
 
@@ -31,12 +30,22 @@ gem install dougie
 ## The Bodega Workflow
 
 1. `cd` into your theme folder
-2. Run `$ doguie bootstrap`
-4. Add your store API keys to `_stores.yml` file ([See instructions](https://github.com/XXIX/dougie/wiki/Theme-and-Store-Requirements))
-5. Replace your development store with your theme by running: `$ dougie replace_theme`
-6. Watch and sync your theme folder by running:  `$ dougie watch`
-7. Edit your theme files
-8. Sync updates with production by running: `$ dougie sync_theme production`
+2. Run `$ dougie bootstrap`
+3. Add your store API keys to the `_stores.yml` file
+4. Replace your development store with your theme by running: `$ dougie replace_theme`
+5. Watch and sync your theme folder by running:  `$ dougie watch`
+6. Edit your theme files
+7. Sync updates with production by running: `$ dougie sync_theme production`
+
+## Getting API keys
+
+1. Login to the Admin of your store
+2. Go to `Apps`
+3. Click on `Private Apps`
+4. Click `Create private app`
+5. Give the app a name, like `Dougie`
+6. Copy and paste the `API Key` and `Password` into the `_stores.yml` file in your theme folder under `development` and update the store URL
+7. Repeat for a production store
 
 ## Building Locally
 
