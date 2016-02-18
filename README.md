@@ -1,6 +1,6 @@
-# Bodega — A Shopify Workflow Gem
+# Dougie — A Shopify Workflow Gem
 
-Bodega makes it easier for developers and designers to develop themes and deploy stores on Shopify.
+Dougie makes it easier for developers and designers to develop themes and deploy stores on Shopify.
 
 ## Benefits
 
@@ -21,18 +21,18 @@ Bodega makes it easier for developers and designers to develop themes and deploy
 ## Installation
 
 ```
-gem install bodega-shopify
+gem install dougie
 ```
 
 ## The Bodega Workflow
 
 1. `cd` into your theme folder
-2. Run `$ bodega bootstrap`
-4. Setup your bodega config file ([See instructions](https://github.com/XXIX/bodega/wiki/Theme-and-Store-Requirements))
-5. Replace your development store with your theme by running: `$ bodega replace_theme`
-6. Watch and sync your theme folder by running:  `$ bodega watch`
+2. Run `$ doguie bootstrap`
+4. Add your store API keys to `_stores.yml` file ([See instructions](https://github.com/XXIX/dougie/wiki/Theme-and-Store-Requirements))
+5. Replace your development store with your theme by running: `$ dougie replace_theme`
+6. Watch and sync your theme folder by running:  `$ dougie watch`
 7. Edit your theme files
-8. Sync updates with production by running: `$ bodega sync_theme production`
+8. Sync updates with production by running: `$ dougie sync_theme production`
 
 ## Building Locally
 
@@ -42,13 +42,13 @@ gem install bodega-shopify
 
 ## Publishing
 
-1. Update the version number in `lib/bodega-shopify/version.rb`
-2. Run `gem build bodega-shopify.gemspec`
-3. Run `gem push bodega-shopify-0.0.X.gem`
+1. Update the version number in `lib/dougie/version.rb`
+2. Run `gem build dougie.gemspec`
+3. Run `gem push dougie-0.0.X.gem`
 
 ## Contributing
 
-1. Fork it ( https://github.com/xxix/bodega-gem/fork )
+1. Fork it ( https://github.com/xxix/dougie-gem/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
