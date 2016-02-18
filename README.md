@@ -1,3 +1,7 @@
+![Dougie](http://carboncostume.com/wordpress/wp-content/uploads/2014/06/dougheffernan.jpg)
+
+Who else would you want to delivery your theme files to Shopify?
+
 # Dougie — A Shopify Workflow Gem
 
 Dougie makes it easier for developers and designers to develop themes and deploy stores on Shopify.
